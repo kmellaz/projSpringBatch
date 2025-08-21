@@ -1,3 +1,10 @@
+# Fichiers de configuration sensibles
+*.env
+*.yml
+*.properties
+config/*.json
+
+
 # Compiled class file
 *.class
 
@@ -22,3 +29,51 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+=======
+# === Fichiers de compilation ===
+*.class
+*.jar
+*.war
+*.ear
+
+# === Dossiers de build ===
+/bin/
+/build/
+/out/
+/target/
+
+# === Fichiers temporaires ===
+*.log
+*.tmp
+*.swp
+*~
+
+# === IDE spécifiques ===
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# NetBeans
+/nbproject/private/
+/build/
+/dist/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# VS Code
+.vscode/
+
+# === OS spécifiques ===
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
