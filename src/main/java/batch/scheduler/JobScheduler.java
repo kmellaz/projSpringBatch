@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Component
-@EnableScheduling
+//@EnableScheduling
 public class JobScheduler {
 
     private final JobLauncher jobLauncher;

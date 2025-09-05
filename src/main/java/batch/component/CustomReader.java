@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 @Component("customReader")
-
 public class CustomReader implements ItemReader<String> {
 
     private final Iterator<String> data = Arrays.asList("Alice", "Bob", "Charlie", "David", "Eva").iterator();

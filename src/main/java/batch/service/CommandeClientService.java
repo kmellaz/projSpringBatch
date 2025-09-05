@@ -21,6 +21,7 @@ public class CommandeClientService {
     private final CommandeRepository commandeRepository;
     private final ClientRepository clientRepository;
     private final ProduitRepository produitRepository;
+    private static final int NOMBRE_COMMANDE_MAX = 100_000;
 
     @Autowired
     public CommandeClientService(CommandeRepository commandeRepository,
@@ -36,16 +37,17 @@ public class CommandeClientService {
         List<Client> allClient = this.clientRepository.findAll();
         List<Produit> allProduit = this.produitRepository.findAll();
 
-        for (int indexClient = 0; indexClient<5; indexClient++){
+        for (int indexClient = 0; indexClient < allClient.size(); indexClient++){
             // client
             Client client = getRandomFromList(allClient);
             // commandes
-            for(int indexCommande=0 ; indexCommande<=5; indexCommande++){
+            for(int indexCommande=0 ; indexCommande < NOMBRE_COMMANDE_MAX ; indexCommande++){
                 Commande commande = new Commande();
                 commande.setDateCommande(LocalDateTime.now());
 
                 // lignes achat
-                for (int i=0 ; i<5; i++){
+
+                for (int i=0 ; i<100; i++){
                     ClientAchat ligneAchat = new ClientAchat();
                     Produit produit = getRandomFromList(allProduit);
                     ClientAchat ca = commande.getLignes().stream().filter(ligne->ligne.getProduit().getNom().equals(produit.getNom())).findFirst().orElse(null);

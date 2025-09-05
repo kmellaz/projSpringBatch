@@ -16,8 +16,7 @@ public class LigneCommandeItemWriter extends FlatFileItemWriter<LigneCommande> {
     public LigneCommandeItemWriter(@Value("#{jobParameters['outputFile']}") String outputFile) {
         setResource(new FileSystemResource(outputFile));
         DelimitedLineAggregator lineAggregator = new DelimitedLineAggregator<>();
-        lineAggregator.setDelimiter(",");
-
+        lineAggregator.setDelimiter(";");
         BeanWrapperFieldExtractor beanWrapperFieldExtractor = new BeanWrapperFieldExtractor<>();
         beanWrapperFieldExtractor.setNames(new String[] {"client", "email", "produit",
                                                          "quantite", "prixUnitaire",

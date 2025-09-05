@@ -50,7 +50,7 @@ public class ChunkJobConfig {
                       ItemProcessor ligneCommandeItemProcessor,
                       ItemWriter ligneCommandeItemWriter) {
         return new StepBuilder("chunkStepWriteFile", jobRepository)
-                .<String, String>chunk(100, transactionManager)
+                .<String, String>chunk(10000, transactionManager)
                 .reader(ligneCommandeItemReader)
                 .processor(ligneCommandeItemProcessor)
                 .writer(ligneCommandeItemWriter)
