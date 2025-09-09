@@ -46,8 +46,8 @@ public class JobSplitFileAndImport {
     private String partitionDir;
 */
     @Bean
-    public Job importJob(Step splitFileStep, Step masterStep, JobRepository jobRepository) {
-                return new JobBuilder("importJob", jobRepository)
+    public Job splitFileAndImportJob(Step splitFileStep, Step masterStep, JobRepository jobRepository) {
+                return new JobBuilder("splitFileAndImportJob", jobRepository)
                 .start(splitFileStep)
                 .next(masterStep)
                 .build();

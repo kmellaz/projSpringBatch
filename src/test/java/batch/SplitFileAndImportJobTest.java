@@ -9,7 +9,6 @@ import org.springframework.batch.test.context.SpringBatchTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -40,7 +39,7 @@ public class SplitFileAndImportJobTest {
     private JobLauncher jobLauncher;
 
     @Autowired
-    private Job importJob;
+    private Job splitFileAndImportJob;
 
     @BeforeEach
     void setUp() throws IOException {
@@ -67,7 +66,7 @@ public class SplitFileAndImportJobTest {
                 .addLong("linesPerFile", LINES_PER_FILE)
                 .toJobParameters();
 
-        JobExecution execution = jobLauncher.run(importJob, params);
+        JobExecution execution = jobLauncher.run(splitFileAndImportJob, params);
 
         assertEquals(ExitStatus.COMPLETED, execution.getExitStatus());
     }
