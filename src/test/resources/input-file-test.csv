@@ -1,0 +1,6 @@
+client;email;produit;quantite;prixUnitaire;prixTotal;dateCommande
+TOTO;toto@gmail.com;Tee shirt PUMA;7;15.00;105.00;2023-05-05
+TOTO;toto@gmail.com;Tee shirt NIKE;1;17.00;17.00;2023-05-05
+TOTO;toto@gmail.com;Tee shirt PUMA;8;15.00;120.00;2024-06-24
+TOTO;toto@gmail.com;Tee shirt UMBRO;6;13.00;78.00;2024-06-24
+TOTO;toto@gmail.com;Tee shirt ADIDAS;6;16.00;96.00;2024-06-24

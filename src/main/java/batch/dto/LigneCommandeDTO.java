@@ -11,6 +11,18 @@ public class LigneCommandeDTO {
     BigDecimal prixTotal;
     String dateCommande;
 
+    public LigneCommandeDTO() {
+    }
+
+    public LigneCommandeDTO(String client, String email, String produit, int quantite, BigDecimal prixUnitaire, BigDecimal prixTotal, String dateCommande) {
+        this.client = client;
+        this.email = email;
+        this.produit = produit;
+        this.quantite = quantite;
+        this.prixUnitaire = prixUnitaire;
+        this.prixTotal = prixTotal;
+        this.dateCommande = dateCommande;
+    }
 
     public String getClient() {
         return client;
